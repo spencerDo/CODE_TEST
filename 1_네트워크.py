@@ -7,7 +7,7 @@ def solution(n, computers):
             dfs(x,y-1)
             dfs(x,y+1)
             dfs(x+1,y)
-            dfs(x-y,y)
+            dfs(x-1,y)
             return True
         return False
     answer = 0
