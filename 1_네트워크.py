@@ -1,18 +1,14 @@
+def dfs(x, y, graph):
+    graph[x][y] = 0
+    for i in range(len(graph)):
+        if graph[y][i] == 1:
+            dfs(y, i, graph)
+
 def solution(n, computers):
-    def dfs(x,y):
-        if x < 0 or y < 0 or x >= n or y >= n:
-            return False
-        if computers[x][y] == 1:
-            computers[x][y] = 0
-            dfs(x,y-1)
-            dfs(x,y+1)
-            dfs(x+1,y)
-            dfs(x-1,y)
-            return True
-        return False
     answer = 0
     for i in range(n):
         for j in range(n):
-            if dfs(i,j) == True:
+            if computers[i][j] == 1:
                 answer += 1
+                dfs(i, j, computers)
     return answer
