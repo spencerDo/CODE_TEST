@@ -1,4 +1,4 @@
-def solution(p):
+def s(p):
     if len(p) == 0:
         return p
     else:
@@ -21,6 +21,6 @@ def solution(p):
         if a == len(U):
             break
     else:
-        return u + solution(v)
+        return u + s(v)
 
-    return "(" + solution(v) + ")" + u[1:-1][::-1]
+    return "(" + s(v) + ")" + u[1:-1][::-1]
